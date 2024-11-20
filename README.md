@@ -20,7 +20,7 @@ const login = async () => {
 };
 ```
 
-![Tampilan Loginn](TampilanLoginn.png)
+![Tampilan Loginn](TampilanLoginn.jpg)
 
 Setelah klik tombol login, pilih akun Google yang ingin digunakan, lalu tekan "OK".
 
@@ -67,7 +67,7 @@ Untuk membuka halaman Profile Page, klik ikon Profile di bagian kanan bawah laya
 
 ## Profile Page
 
-![Tampilan Profile](TampilanProfile.png)
+![Tampilan Profile](TampilanProfile.jpg)
 
 Pada halaman ini, pengguna dapat melihat foto profil, nama, dan email yang digunakan saat login.
 ```template
