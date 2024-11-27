@@ -112,3 +112,20 @@ const logout = () => {
     authStore.logout();
 };
 ```
+# Create
+![Tampilan Tambah](TampilanTambah.png)
+![TambahSukses](TambahSukses.png)
+1. Saat tombol Tambah ditekan maka modal input akan muncul. Pengguna dapat mengisi data todo. Klik tombol Simpan lalu event @submit akan memanggil fuingsi hnadleSubmit(todo)
+2. Di dalam fungsi tersebut nilai input akan divalidasi dahulu,jika Jika title kosong, akan muncul pesan peringatan melalui showToast. Jika validasi berhasil, fungsi akan memeriksa apakah editingId kosong. Jika kosong, fungsi firestoreService.addTodo(todo) akan digunakan untuk menambahkan data baru ke database. Setelah itu, fungsi loadTodos() dijalankan untuk memperbarui daftar todo, diikuti dengan notifikasi keberhasilan. Proses ini memastikan penambahan todo berjalan dengan baik.
+# Edit
+![Tampilan Update](TampilanUpdate.png)
+![UpdateSukses](UpdateSukses.png)
+1. Saat pengguna ingin mengedit data,  memilih item todo yang ada akan membuka InputModal dengan data yang sudah dimasukkan.
+2. Ketika selesai mengedit dan mengklik tombol Simpan, event @submit  memanggil fungsi handleSubmit(todo). Dengan menggunakan fungsi ini, sistem akan memeriksa apakah "editingId" memiliki nilai. Dalam hal ini, berarti pengguna sedang mengedit data. Fungsi firestoreService.updateTodo(editingId, todo) kemudian dipanggil untuk memperbarui data dalam database berdasarkan ID yang diedit.
+3. Jika pembaruan berhasil, fungsi loadTodos() dijalankan dan daftar todo diperbarui untuk  mencerminkan perubahan terbaru. Pesan sukses ditampilkan melalui showToast sehingga pengguna dapat mengonfirmasi bahwa data telah berhasil diperbarui. Alur ini memastikan proses pengeditan berjalan lancar dan perubahan disimpan dengan baik.
+
+# Delete
+![Tampilan Delete](TampilanDelete.png)
+![DeleteSukses](DeleteSukses.png)
+1. Proses penghapusan todo dimulai ketika pengguna memilih item yang akan dihapus dan mengklik tombol Hapus. Aplikasi ini menampilkan konfirmasi seperti modals dan notifikasi untuk mengonfirmasi tindakan.
+2. Setelah pengguna mengonfirmasi, fungsi deleteTodo(todoId) dipanggil untuk menghapus data dari database (seperti Firestore). Jika berhasil, fungsi loadTodos()  memperbarui daftar todo sehingga item yang dihapus tidak lagi terlihat. Pesan sukses ditampilkan  memberi tahu pengguna bahwa penghapusan  berhasil. Proses ini memastikan penghapusan  aman dan terjamin.
